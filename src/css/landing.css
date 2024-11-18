@@ -1,0 +1,196 @@
+html {
+    font-size: 1em;
+  }
+  
+  :root {
+    --primary-color: rgb(153, 165, 154);
+  }
+  
+  body {
+    margin: 0;
+    color: white;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background-color: black;
+    background-image: url(https://relocatecalculator.com/images/background.jpg);
+  }
+  
+  .navbar {
+    background: #1a1d19;
+    padding: 1em;
+  }
+  
+  .navbar .logo {
+    text-decoration: none;
+    display: inline-flex;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+  }
+  
+  .navbar .logo span {
+    color: var(--primary-color);
+  }
+  
+  .navbar .logo img {
+    width: 1.4em;
+    height: 1.4em;
+    margin-right: 0.3em;
+  }
+  
+  .navbar nav {
+    display: none;
+  }
+  
+  .navbar .container {
+    display: flex;
+    place-content: space-between;
+  }
+  
+  .navbar .mobile-menu {
+    cursor: pointer;
+  }
+  
+  a {
+    color: #444444;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    padding: 1em;
+    border-style: so;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  section h1 .head {
+    font-size: 1.75em;
+    padding: 0.25em;
+    text-transform: capitalize;
+    color: rgb(182, 202, 184);
+  }
+  section h1 .subhead {
+    font-size: 1em;
+  }
+  section .main-body {
+    text-align: left;
+  }
+  section .main-body h2 {
+    color: var(--primary-color);
+  }
+  section .main-body .paragraph {
+    font-size: 1em;
+    line-height: 150%;
+  }
+  section .main-body .note {
+    padding: 1em 0;
+    font-size: small;
+  }
+  
+  .calculate-cta {
+    height: 50px;
+    width: 200px;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 0.2em 1.2em;
+    font-size: 20px;
+    border: 1px;
+    border-radius: 0.5em;
+    font-weight: bold;
+  }
+  
+  .calculate-cta:hover {
+    cursor: pointer;
+    background: #cacaca;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+  }
+  
+  nav.menu-btn {
+    display: block;
+  }
+  
+  nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #20272e;
+    height: 100vh;
+    padding: 1em;
+  }
+  
+  nav ul.primary-nav {
+    margin-top: 5em;
+  }
+  
+  nav li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    font-size: 1.3em;
+    text-align: right;
+  }
+  
+  nav li a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  .mobile-menu-exit {
+    float: right;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+  
+  @media only screen and (min-width: 730px) {
+    section {
+      max-width: 800px;
+    }
+    .mobile-menu,
+    .mobile-menu-exit {
+      display: none;
+    }
+    .navbar .container {
+      display: grid;
+      grid-template-columns: 180px auto;
+    }
+    .navbar nav {
+      display: flex;
+      justify-content: space-between;
+      background: none;
+      position: unset;
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
+    .navbar nav ul {
+      display: flex;
+    }
+    .navbar nav a {
+      color: var(--primary-color);
+      font-size: 1em;
+      padding: 0.1em 1em;
+    }
+    .navbar nav ul.primary-nav {
+      margin: 0;
+    }
+  }/*# sourceMappingURL=landing.css.map */

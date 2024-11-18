@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relocation Calculator</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+</head>
+
+<body>
+  <!-- Existing Spatial Calculator Code Above -->
+
+  <!-- New Relocation Calculator Section -->
+  <section class="relocation-section">
+    <div class="heading">
+      <h1>Relocation Cost Calculator</h1>
+    </div>
+
+    <div class="container">
+      <div class="relocation-input">
+        <ul class="input-list">
+          <form action="" name="relocationForm">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" placeholder="Enter city name" id="city" name="city" />
+            </div>
+            <div class="form-group">
+              <label for="costOfLiving">Cost of Living Index</label>
+              <input type="number" placeholder="Cost of Living Index" id="costOfLiving" min="0" />
+            </div>
+            <div class="form-group">
+              <label for="rent">Monthly Rent</label>
+              <input type="number" placeholder="Rent (USD)" id="rent" min="0" />
+            </div>
+            <div class="form-group">
+              <label for="relocationDistance">Relocation Distance</label>
+              <input type="number" placeholder="Distance (miles)" id="relocationDistance" min="0" />
+            </div>
+          </form>
+        </ul>
+        <div class="buttons">
+          <input class="calculate-cta" type="button" id="calculate-relocation-btn" value="Calculate Relocation" />
+        </div>
+      </div>
+
+      <div class="relocation-output" id="relocation-output">
+        <span class="close-output" id="close-relocation-output">&times;</span>
+        <div class="output-container">
+          <div class="form-group">
+            <label for="totalCost">Total Relocation Cost</label>
+            <div class="result" id="total-cost-output"></div>
+          </div>
+        </div>
+        <div class="buttons">
+          <input class="clear-cta" type="button" id="clear-relocation-btn" value="Clear" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

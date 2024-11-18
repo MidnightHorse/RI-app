@@ -1,0 +1,396 @@
+html {
+    font-size: 1em;
+  }
+  
+  :root {
+    --primary-color: rgb(153, 165, 154);
+  }
+  
+  body {
+    margin: 0;
+    color: white;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background-image: url(https://relocatecalculator.com/images/background.jpg);
+  }
+  
+  .bg {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .navbar {
+    background: rgb(26, 29, 25);
+    padding: 1em;
+  }
+  .navbar .logo {
+    text-decoration: none;
+    display: inline-flex;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+  }
+  .navbar .logo span {
+    color: var(--primary-color);
+  }
+  .navbar .logo img {
+    width: 1.4em;
+    height: 1.4em;
+    margin-right: 0.3em;
+  }
+  .navbar nav {
+    display: none;
+  }
+  .navbar .container {
+    display: flex;
+    place-content: space-between;
+  }
+  .navbar .mobile-menu {
+    cursor: pointer;
+  }
+  
+  a {
+    color: #444444;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+    padding: 1.5em 2em;
+  }
+  
+  .hero {
+    background-image: url('../image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  .hero .container {
+    width: 95%;
+    margin: auto;
+  }
+  .hero .heading .subhead {
+    display: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: gray;
+    letter-spacing: 0.2em;
+  }
+  .hero .heading h1 {
+    display: none;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    line-height: 1.2;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+  }
+  .hero .hero-input {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    width: 90%;
+    padding: 1em;
+    border-style: so;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .hero .hero-input .form-group [type=checkbox] {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .hero .hero-input .form-group label {
+    display: block;
+    text-align: left;
+    font-size: 0.9em;
+    width: 17.5em;
+    margin: auto;
+    margin-top: 0.3em;
+    padding: 0.5em;
+  }
+  .hero .hero-input .form-group select {
+    width: 19em;
+    height: 2.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .hero .hero-input .form-group select option {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .hero .hero-input .form-group input {
+    width: 18.5em;
+    height: 2.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .hero .hero-input .form-group .switch {
+    position: relative;
+    display: inline-block;
+    width: 3em;
+    height: 1em;
+    margin-left: 9.5em;
+    vertical-align: middle;
+  }
+  .hero .hero-input .form-group .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .hero .hero-input .form-group .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #20272e;
+    transition: 0.4s;
+  }
+  .hero .hero-input .form-group .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  .hero .hero-input .form-group input:checked + .slider {
+    background-color: var(--primary-color);
+  }
+  .hero .hero-input .form-group input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color);
+  }
+  .hero .hero-input .form-group input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  .hero .hero-input .form-group .slider.round {
+    border-radius: 34px;
+  }
+  .hero .hero-input .form-group .slider.round:before {
+    border-radius: 50%;
+  }
+  .hero .buttons .calculate-cta, .hero .buttons .clear-cta {
+    height: 50px;
+    width: 200px;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 0.2em 1.2em;
+    font-size: 20px;
+    border: 1px;
+    border-radius: 0.5em;
+    font-weight: bold;
+  }
+  .hero .buttons .calculate-cta:hover, .hero .buttons .clear-cta:hover {
+    cursor: pointer;
+    background: #cacaca;
+  }
+  .hero .hero-output {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  .hero .hero-output .output-container {
+    background-color: var(--primary-color);
+    color: black;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 1em;
+    text-align: left;
+    width: 70%;
+  }
+  .hero .hero-output .output-container label {
+    font-size: 1em;
+    font-weight: 550;
+  }
+  .hero .hero-output .output-container .result {
+    color: black;
+    font-size: 0.9em;
+    padding: 0.8em 0;
+  }
+  .hero .hero-output .output-container .note {
+    display: none;
+    padding: 0.5em 0;
+    font-size: 0.7em;
+  }
+  .hero .hero-output .clear-cta {
+    display: none;
+  }
+  .hero .hero-output .close-output {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .hero .hero-output .close-output:hover,
+  .hero .hero-output .close-output:focus {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  nav.menu-btn {
+    display: block;
+  }
+  
+  nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #20272e;
+    height: 100vh;
+    padding: 1em;
+  }
+  nav ul.primary-nav {
+    margin-top: 5em;
+  }
+  nav li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    font-size: 1.3em;
+    text-align: right;
+  }
+  nav li a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  .mobile-menu-exit {
+    float: right;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+  
+  @media only screen and (min-width: 500px) {
+    .hero .hero-input {
+      border-radius: 1em 1em 0 0;
+    }
+    .hero .close {
+      display: none;
+    }
+    .hero .hero-output {
+      position: relative;
+      display: inline-block;
+      margin: auto;
+      width: 90%;
+      padding: 1em;
+      border-style: so;
+      border-radius: 0 0 1em 1em;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .hero .hero-output .close-output {
+      display: none;
+    }
+    .hero .hero-output .output-container {
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      margin: 0 auto;
+      padding: 0;
+      border-radius: 0;
+      text-align: left;
+      width: 100%;
+      width: 17em;
+      margin: auto;
+      text-align: left;
+    }
+    .hero .hero-output .output-container .form-group label {
+      display: block;
+      padding: 0 0.5em;
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+    .hero .hero-output .output-container .form-group .result {
+      font-size: 0.9em;
+      height: 1.5em;
+      padding: 0.5em;
+      color: var(--primary-color);
+    }
+    .hero .hero-output .output-container .note {
+      display: none;
+      text-align: left;
+      margin: 1em 0;
+      padding: 0 0.5em;
+      font-size: 0.7em;
+    }
+    .hero .hero-output .clear-cta {
+      display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 730px) {
+    .mobile-menu,
+    .mobile-menu-exit {
+      display: none;
+    }
+    .navbar .container {
+      display: grid;
+      grid-template-columns: 180px auto;
+    }
+    .navbar nav {
+      display: flex;
+      justify-content: space-between;
+      background: none;
+      position: unset;
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
+    .navbar nav ul {
+      display: flex;
+    }
+    .navbar nav a {
+      color: var(--primary-color);
+      font-size: 1em;
+      padding: 0.1em 1em;
+    }
+    .navbar nav ul.primary-nav {
+      margin: 0;
+    }
+    .hero .container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 60em;
+    }
+    .hero .hero-input {
+      display: block;
+      width: 50%;
+      max-width: 60%;
+      height: 35em;
+      margin-right: 5%;
+      border-radius: 1em;
+    }
+    .hero .hero-output {
+      display: block;
+      width: 50%;
+      max-width: 60%;
+      height: 35em;
+      margin-left: 5%;
+      border-radius: 1em;
+    }
+    .hero .hero-output .output-container {
+      margin-top: 1em;
+    }
+    .hero .buttons {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 5%;
+    }
+  }/*# sourceMappingURL=main.css.map */
